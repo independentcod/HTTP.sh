@@ -7,15 +7,18 @@
 # CSS files (.css) -> text/css
 # Text files (mimetype starting with 'text/') -> text/plain (fixes XSS in pastebin)
 # All else -> pass real mimetype
+#
+# For some reason, we now have PHP and Python support (issue #1).
+# PHP (.php) -> no content-type
+# Python (.py) -> no content-type
 
 function get_mime() {
 	local file=$@
 	local mime=$(file --mime-type -b $file)
-	echo $file $mime > /dev/stderr
 	if [[ $file == *".htm" || $file == *".html" ]]; then
 		content_type="text/html"
 		return 0
-	elif [[ $file == *".shs" ]]; then
+	elif [[ $file == *".shs" || $file == *".py" || $file == *".php" ]]; then
 		content_type=""
 		return 0
 	elif [[ $file == *".css" ]]; then

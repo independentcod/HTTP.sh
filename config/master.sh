@@ -18,3 +18,11 @@ cfg[extension]='shs'
 cfg[extra_headers]='server: HTTP.sh/0.9'
 
 cfg[title]='ddd defies development'
+
+cfg[php_enabled]=true
+cfg[python_enabled]=true
+
+# by default, those logs are placed in the main directory - change it to /var/log/_name_ for production
+cfg[log_http]='log_http'
+cfg[log_https]='log_https'
+cfg[log_misc]='log'
