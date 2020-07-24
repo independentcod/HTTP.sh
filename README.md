@@ -1,4 +1,7 @@
-# HTTP.sh
+# HTTP.sh has moved
+The project is currently hosted on [my gitlab - go THERE for a more current version](https://git.sakamoto.pl/domi/http.sh). This legacy version will be kept for historical purposes and to avoid link rot. Below is the original README.
+
+
 Node.js, but `| sed s/Node/HTTP/;s/js/sh/`.
 
 Launch with `./http.sh`. Does not need root priviliges ~~- in fact, DO NOT run it as superuser~~ unless you're running it on ports lower than 1024. If you're running on 80 and 443, superuser is more or less mandatory, but THIS MAY BE UNSAFE.
